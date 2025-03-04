@@ -9,7 +9,7 @@ const Hero = () => {
   const locations = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata"];
 
   return (
-    <div className="w-full h-[627px] relative">
+    <div className="w-full h-[462px] relative">
       <img className="w-full h-full object-cover" src={foodimg1} alt="food" />
 
       {/* Overlay content */}

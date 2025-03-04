@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "@/components/Hero";
+import ZomatoCards from "@/components/ZomatoCards";
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,9 @@ const LandingPage = () => {
 
       {/* hero section */}
       <Hero />
+
+      {/* zomato cards section */}
+      <ZomatoCards/>
 
     </div>
   )
