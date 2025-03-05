@@ -13,7 +13,7 @@ const Collections = () => {
   ];
 
   return (
-    <div className="container  mx-auto px-4 py-8">
+    <div className=" py-8">
       {/* title */}
       <div className="font-semibold text-2xl">
         <h2>Collections</h2>

@@ -30,11 +30,11 @@ const ZomatoCards = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="py-8"> {/* **Removed 'container mx-auto px-4' and kept py-8 for vertical padding** */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cardData.map((card) => (
-          <Card 
-            key={card.id} 
+          <Card
+            key={card.id}
             className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer p-0"
           >
             {/* Image Container */}

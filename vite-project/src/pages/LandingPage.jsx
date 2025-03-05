@@ -19,12 +19,14 @@ const LandingPage = () => {
 
       {/* hero section */}
       <Hero />
-      <div className="px-20">
-        {/* zomato cards section */}
-      <ZomatoCards/>
 
-{/* collections section */}
-<Collections/>
+
+      <div className="container mx-auto px-20">
+        {/* zomato cards section */}
+        <ZomatoCards/>
+
+        {/* collections section */}
+        <Collections/>
       </div>
 
 
