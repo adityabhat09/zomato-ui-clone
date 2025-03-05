@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import ZomatoCards from "@/components/ZomatoCards";
+import Collections from "@/components/Collections";
 
 const LandingPage = () => {
   return (
@@ -18,9 +19,14 @@ const LandingPage = () => {
 
       {/* hero section */}
       <Hero />
-
-      {/* zomato cards section */}
+      <div className="px-20">
+        {/* zomato cards section */}
       <ZomatoCards/>
+
+{/* collections section */}
+<Collections/>
+      </div>
+
 
     </div>
   )
