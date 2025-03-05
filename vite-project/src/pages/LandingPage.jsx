@@ -21,7 +21,7 @@ const LandingPage = () => {
       <Hero />
 
 
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto px-40">
         {/* zomato cards section */}
         <ZomatoCards/>
 
