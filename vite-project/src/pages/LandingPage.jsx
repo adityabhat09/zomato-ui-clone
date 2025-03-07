@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "@/components/Hero";
 import ZomatoCards from "@/components/ZomatoCards";
 import Collections from "@/components/Collections";
+import Localities from "@/components/Localities";
+import GetZomato from "@/components/GetZomato";
 
 const LandingPage = () => {
   return (
@@ -27,7 +29,13 @@ const LandingPage = () => {
 
         {/* collections section */}
         <Collections/>
+
+        {/* localities section */}
+        <Localities/>
       </div>
+
+      {/* get the zomato app section */}
+      <GetZomato/>
 
 
     </div>
