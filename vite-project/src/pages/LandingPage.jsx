@@ -4,6 +4,8 @@ import ZomatoCards from "@/components/ZomatoCards";
 import Collections from "@/components/Collections";
 import Localities from "@/components/Localities";
 import GetZomato from "@/components/GetZomato";
+import ExploreOptn from "@/components/ExploreOptn";
+import Footer from "@/components/Footer";
 
 const LandingPage = () => {
   return (
@@ -36,6 +38,16 @@ const LandingPage = () => {
 
       {/* get the zomato app section */}
       <GetZomato/>
+
+      {/* Explore options near me section */}
+      <div  className="bg-gray-50">
+        <div className="container mx-auto px-40">
+          <ExploreOptn/>
+        </div>
+      </div>
+      
+      {/* footer */}
+      <Footer/>
 
 
     </div>

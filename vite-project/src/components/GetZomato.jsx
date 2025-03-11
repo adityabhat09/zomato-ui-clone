@@ -6,7 +6,7 @@ import Playstore from '../assets/Playstore.webp';
 
 const GetZomato = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-[#FFFBF7] py-16">
       <div className="container mx-auto px-4 flex items-center justify-center">
         {/* phone image wala div */}
         <div className="relative w-1/3 hidden md:block mr-12">

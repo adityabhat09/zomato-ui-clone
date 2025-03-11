@@ -31,20 +31,31 @@ const Collections = () => {
       {/* cards ka container */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {cardData.map((card, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-            {/* Image Placeholder (replace with actual image) */}
-            <div className="aspect-w-4 aspect-h-3"> {/* You might need to install aspect-ratio plugin if not already configured - see note below */}
-              <img
-                className="w-full h-full object-cover"
-                src={card.imageSrc} // CORRECTED: Using card.imageSrc here!
-                alt={card.title}
-              />
-            </div>
-            <div className="p-4">
+          <div       
+          key={index}
+          className="relative rounded-lg overflow-hidden group cursor-pointer"
+          >
+            {/* background image */}
+            <img
+              className="w-full h-full object-cover transform transition duration-300 group-hover:scale-105"
+              src={card.imageSrc}
+              alt={card.title}
+            />
+
+            {/* overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+
+            {/* text on top of image */}
+            <div className="absolute bottom-4 left-4 text-white">
               <h3 className="text-lg font-semibold">{card.title}</h3>
-              <p className="text-gray-600 text-sm mt-1">{card.places}</p>
+              <p className="text-sm">{card.places}</p>
             </div>
+
           </div>
+
+
+
+          
         ))}
       </div>
     </div>
