@@ -2,6 +2,7 @@ import React from 'react'
 import Herosecn from './comps/herosecn'
 import WhyPartnerWithZomato from './comps/WhyPartnerWithZomato'
 import RestaurantSuccessStories from './comps/RestaurantSuccessStories'
+import FAQSection from './comps/FAQSection'
 // import RestaurantSuccessStories from './comps/WhyPartnerWithZomato'
 
 const AddRestPage = () => {
@@ -12,6 +13,7 @@ const AddRestPage = () => {
           <WhyPartnerWithZomato/>
         </div>
         <RestaurantSuccessStories/>
+        <FAQSection/>
         
     </div>
     
