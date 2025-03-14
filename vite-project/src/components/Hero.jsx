@@ -13,7 +13,7 @@ const Hero = () => {
       <img className="w-full h-full object-cover" src={foodimg1} alt="food" />
 
       {/* Overlay content */}
-      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         {/* Zomato Title */}
         <h1 className="text-6xl font-bold tracking-wide">Zomato</h1>
 

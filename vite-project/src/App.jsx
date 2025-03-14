@@ -4,11 +4,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 import LandingPage from './pages/LandingPage'
-
+import AddRestPage from './pages/add_restaurants_page/AddRestPage';
 
 
 //shadcn imports down
 import { Button } from './components/ui/button'
+
 // import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/AddRest" element={<AddRestPage />} />
       </Routes>
     </Router>
   )
