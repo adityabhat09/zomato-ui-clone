@@ -1,9 +1,18 @@
 import React from 'react'
 import Herosecn from './comps/herosecn'
+import WhyPartnerWithZomato from './comps/WhyPartnerWithZomato'
+// import RestaurantSuccessStories from './comps/WhyPartnerWithZomato'
 
 const AddRestPage = () => {
   return (
-    <Herosecn/>
+    <div>
+        <Herosecn/>
+        <div className="mt-32"> 
+          <WhyPartnerWithZomato/>
+        </div>
+        
+    </div>
+    
   )
 }
 
