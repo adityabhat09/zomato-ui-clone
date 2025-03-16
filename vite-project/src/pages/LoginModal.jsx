@@ -14,7 +14,10 @@ const LoginModal = ({ isOpen, onClose }) => {
         <button className="absolute top-2 right-2 text-gray-500" onClick={onClose}>
           ✖
         </button>
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <h2 className="text-xl font-semibold mb-4" onClick={(e) => {
+              e.preventDefault(); // Prevents page refresh
+              setIsLoginOpen(true);
+            }}>Login</h2>
         
         {/* Phone Number Input */}
         <div className="flex items-center border rounded-lg px-3 py-2 mt-1">

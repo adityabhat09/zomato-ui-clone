@@ -1,6 +1,11 @@
 import foodimg1 from "../../../assets/foodimg1.jpg";
+import LoginModal from "@/pages/LoginModal";
+import { useState } from "react";
 
 const Herosecn = () => {
+
+  const [isLoginOpen, setIsLoginOpen] = useState(false); // Control modal visibility
+
   return (
     <div className="w-full h-[600px] relative">
       {/* Background Image */}
@@ -15,8 +20,17 @@ const Herosecn = () => {
         
         {/* Login Button */}
         <div className="absolute top-6 right-6">
-          <button className="px-6 py-1 border border-white text-white rounded-full">Login</button>
+          <button
+            className="px-6 py-1 border border-white text-white rounded-full"
+            onClick={() => setIsLoginOpen(true)} // Add this line
+          >
+            Login
+          </button>
         </div>
+
+        {/* login modal */}
+        <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+
         
         {/* Main Heading */}
         <div className="max-w-3xl px-4">
