@@ -1,15 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import Hero from "@/components/Hero";
 import ZomatoCards from "@/components/ZomatoCards";
 import Collections from "@/components/Collections";
 import Localities from "@/components/Localities";
 import GetZomato from "@/components/GetZomato";
 import ExploreOptn from "@/components/ExploreOptn";
+import LoginModal from "./LoginModal";
 import Footer from "@/components/Footer";
 
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false); // Control modal visibility
   return (
     <div className="relative">
       {/* Navbar */}
@@ -17,10 +20,23 @@ const LandingPage = () => {
         <div className="text-lg font-semibold">Get the App</div>
         <div className="flex gap-6 text-lg">
           <Link to="/AddRest" className="hover:underline">Add Restaurants</Link>
-          <a href="#" className="hover:underline">Login</a>
+          <a 
+            href="#" 
+            className="hover:underline"
+            onClick={(e) => {
+              e.preventDefault(); // Prevents page refresh
+              setIsLoginOpen(true);
+            }}
+          >
+            Login
+          </a>
+        {/* Set isLoginOpen to true on click */}
           <a href="#" className="hover:underline">Signup</a>
         </div>
       </nav>
+
+      {/* login modal */}
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
 
 
       {/* hero section */}
@@ -49,7 +65,7 @@ const LandingPage = () => {
       </div>
       
       {/* footer */}
-      <Footer/>
+      {/* <Footer/> */}
 
 
     </div>
