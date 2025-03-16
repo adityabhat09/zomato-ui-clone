@@ -17,7 +17,10 @@ const LandingPage = () => {
     <div className="relative">
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-5 text-white bg-transparent z-10">
-        <div className="text-lg font-semibold">Get the App</div>
+        <div className="text-lg font-semibold">
+          <a href="https://play.google.com/store/apps/details?id=com.application.zomato&hl=en_IN" className="hover:underline">Get the app</a>
+          {/* Get the App */}
+        </div>
         <div className="flex gap-6 text-lg">
           <Link to="/AddRest" className="hover:underline">Add Restaurants</Link>
           <a 
