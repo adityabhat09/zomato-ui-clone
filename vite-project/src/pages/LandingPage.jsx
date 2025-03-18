@@ -11,19 +11,40 @@ import SignUpModal from "./SignUpModal";
 import Footer from "@/components/Footer";
 
 import { Link } from "react-router-dom";
+import { Menu, X } from 'lucide-react';
+
 
 const LandingPage = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false); // Control modal visibility
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Control mobile menu visibility
+  
+  // Define the toggleMenu function
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   return (
     <div className="relative">
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-5 text-white bg-transparent z-10">
+      <nav className="absolute top-0 left-0 w-full flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-10 py-5 text-white bg-transparent z-10">
         <div className="text-lg font-semibold">
           <a href="https://play.google.com/store/apps/details?id=com.application.zomato&hl=en_IN" className="hover:underline">Get the app</a>
-          {/* Get the App */}
         </div>
-        <div className="flex gap-6 text-lg">
+        
+        {/* Mobile menu button */}
+        <div className="block md:hidden">
+          <button 
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        
+        {/* Desktop navigation */}
+        <div className="hidden md:flex gap-6 text-lg">
           <Link to="/AddRest" className="hover:underline">Add Restaurants</Link>
           <a 
             href="#" 
@@ -35,8 +56,6 @@ const LandingPage = () => {
           >
             Login
           </a>
-        {/* Set isLoginOpen to true on click */}
-          {/* <a href="#" className="hover:underline">Signup</a> */}
           <a 
             href="#" 
             className="hover:underline"
@@ -50,6 +69,44 @@ const LandingPage = () => {
         </div>
       </nav>
 
+
+      {/* Mobile menu dropdown */}
+      {isMenuOpen && (
+        <div className="absolute top-16 left-0 w-full md:hidden z-20 bg-black bg-opacity-80 py-4">
+          <div className="flex flex-col items-center gap-4">
+            <Link 
+              to="/AddRest" 
+              className="text-white hover:underline text-lg"
+              onClick={toggleMenu}
+            >
+              Add Restaurants
+            </Link>
+            <a 
+              href="#" 
+              className="text-white hover:underline text-lg"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsLoginOpen(true);
+                toggleMenu();
+              }}
+            >
+              Login
+            </a>
+            <a 
+              href="#" 
+              className="text-white hover:underline text-lg"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsSignUpOpen(true);
+                toggleMenu();
+              }}
+            >
+              Sign Up
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* login modal */}
       <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
 
@@ -61,7 +118,7 @@ const LandingPage = () => {
       <Hero />
 
 
-      <div className="container mx-auto px-40">
+      <div className="container mx-auto px-4 md:px-10 lg:px-40">
         {/* zomato cards section */}
         <ZomatoCards/>
 
@@ -76,8 +133,8 @@ const LandingPage = () => {
       <GetZomato/>
 
       {/* Explore options near me section */}
-      <div  className="bg-gray-50">
-        <div className="container mx-auto px-40">
+      <div className="bg-gray-50">
+        <div className="container mx-auto px-4 md:px-10 lg:px-40">
           <ExploreOptn/>
         </div>
       </div>
