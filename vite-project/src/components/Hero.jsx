@@ -13,26 +13,26 @@ const Hero = () => {
       <img className="w-full h-full object-cover" src={foodimg1} alt="food" />
 
       {/* Overlay content */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-full px-4 max-w-full">
         {/* Zomato Title */}
-        <h1 className="text-6xl font-bold tracking-wide">Zomato</h1>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-wide">Zomato</h1>
 
         {/* Tagline */}
-        <p className="text-2xl mt-2">Discover the best food & drinks in {selectedLocation}</p>
+        <p className="text-xl md:text-2xl mt-2">Discover the best food & drinks in {selectedLocation}</p>
 
         {/* Search Box */}
-        <div className="mt-6 flex items-center bg-white p-3 rounded-lg shadow-lg w-[600px] mx-auto">
+        <div className="mt-6 flex flex-col sm:flex-row items-center bg-white p-2 sm:p-3 rounded-lg shadow-lg w-full max-w-[600px] mx-auto">
           
           {/* Location Selector */}
           <div 
-            className="flex items-center gap-2 px-3 border-r border-gray-300 cursor-pointer relative"
+            className="flex items-center gap-2 px-2 sm:px-3 w-full sm:w-auto sm:border-r border-gray-300 cursor-pointer relative mb-2 sm:mb-0"
             onClick={() => setDropdownOpen(!dropdownOpen)}
             tabIndex={0}  
             onBlur={() => setTimeout(() => setDropdownOpen(false), 100)}  
           >
-            <MapPin className="text-red-500 w-5 h-5" />
+            <MapPin className="text-red-500 w-4 h-4 sm:w-5 sm:h-5" />
             <span className="text-gray-700 font-semibold">{selectedLocation}</span>
-            <ChevronDown className="text-gray-500 w-5 h-5" />
+            <ChevronDown className="text-gray-500 w-4 h-4 sm:w-5 sm:h-5" />
 
             {/* Dropdown list */}
             {dropdownOpen && (
@@ -54,12 +54,12 @@ const Hero = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="flex items-center flex-1 px-3">
-            <Search className="text-gray-500 w-5 h-5" />
+          <div className="flex items-center flex-1 px-2 sm:px-3 w-full">
+            <Search className="text-gray-500 w-4 h-4 sm:w-5 sm:h-5" />
             <input 
               type="text" 
               placeholder="Search for restaurant, cuisine, or a dish" 
-              className="w-full p-2 outline-none text-gray-700 placeholder-gray-500"
+              className="w-full p-2 outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base"
             />
           </div>
         </div>
